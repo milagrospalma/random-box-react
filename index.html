@@ -5,10 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Random Box | React</title>
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Bowlby+One+SC|Krona+One|Lobster|Permanent+Marker" rel="stylesheet">
   <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/react-dom-factories@1.0.0/index.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <div id="box"></div>
+  <script type="text/babel">
+    // Color aleatorio
+    let randomColor = () => {
+      let r = Math.round(Math.random() * 255),
+          g = Math.round(Math.random() * 255),
+          b = Math.round(Math.random() * 255),
+          a = 1;
+      let rgba = "rgba(" + r + ", " + g + ", " + b + ", " + a + ")";
+      return rgba;
+    };
+    
+    // Texto aleatorio
+    let randomText = () => {
+      let arrTexts = ['Hi!', 'Hola!', 'Olá!', 'Salut!', 'Ciao!', 'Aloha!', 'Konnichiwa'];
+      let index = Math.round(Math.random() * arrTexts.length);
+      let text = arrTexts[index];
+      return text;
+    };
+
+    // Tipografía aleatoria
+    let randomFont = () => {
+      let arrFonts = ['font-1', 'font-2', 'font-3', 'font-4', 'font-5']
+      let index = Math.round(Math.random() * arrFonts.length);
+      let font = arrFonts[index];
+      return font;
+    }
+    
+    // Componente box
+    class Box extends React.Component {
+      render() {
+        return (
+          <div className="square" style={{backgroundColor: randomColor()}}>
+            <h1 className={randomFont()}>{randomText()}</h1>
+          </div>
+        );
+      }
+    }
+    ReactDOM.render(<Box/>, document.getElementById('box'));
+  </script>
 </body>
 </html>

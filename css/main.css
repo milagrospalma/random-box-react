@@ -1,0 +1,29 @@
+.square {
+  width: 50vw;
+  text-align: center;
+  color: #FFF;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.font-1 {
+  font-family: 'Krona One', sans-serif;
+}
+
+.font-2 {
+  font-family: 'Lobster', cursive;
+}
+
+.font-3 {
+  font-family: 'Bowlby One SC', cursive;
+}
+
+.font-4 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.font-5 {
+  font-family: 'Bangers', cursive;
+}
